@@ -40,11 +40,11 @@
 		<a href="<?php echo tribe_get_event_link(); ?>" rel="bookmark"><?php echo apply_filters( 'ecs_event_list_title', get_the_title(), $atts, $post ) ?></a>
 		
 
-		<?php if ( Events_Calendar_Shortcode::isValid( $atts['timeonly'] ) ): ?>
+		<?php //if ( Events_Calendar_Shortcode::isValid( $atts['timeonly'] ) ): ?>
 			<div class="duration time ecs_start_time">
-				Kl: <?php echo tribe_get_start_time() ?>
+				Kl: <?php echo tribe_get_start_time() ?> - <?php echo tribe_get_end_time() ?>
 			</div>
-		<?php endif; ?>
+		<?php //endif; ?>
 		
 		<?php //if ( in_array( 'venue', $contentorder ) and Events_Calendar_Shortcode::isValid( $atts['venue'] ) ): ?>
 			<div class="ecs-venue"><?php echo tribe_get_venue(); ?></div>
