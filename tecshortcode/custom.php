@@ -40,27 +40,23 @@
 		<a href="<?php echo tribe_get_event_link(); ?>" rel="bookmark"><?php echo apply_filters( 'ecs_event_list_title', get_the_title(), $atts, $post ) ?></a>
 		
 
-		<?php //if ( Events_Calendar_Shortcode::isValid( $atts['timeonly'] ) ): ?>
+		<?php if ( Events_Calendar_Shortcode::isValid( $atts['timeonly'] ) ): ?>
 			<div class="duration time ecs_start_time">
-				Kl: <?php echo tribe_get_start_time() ?> - <?php echo tribe_get_end_time() ?>
+				<?php if(tribe_get_start_time()): ?>
+					Kl: <?php echo tribe_get_start_time() ?>
+				<?php endif; ?>
+
+				<?php if(tribe_get_end_time()): ?>
+					- <?php echo tribe_get_end_time() ?>
+				<?php endif; ?>
 			</div>
-		<?php //endif; ?>
+		<?php endif; ?>
 		
-		<?php //if ( in_array( 'venue', $contentorder ) and Events_Calendar_Shortcode::isValid( $atts['venue'] ) ): ?>
+		<?php if (Events_Calendar_Shortcode::isValid( $atts['venue'] ) ): ?>
 			<div class="ecs-venue"><?php echo tribe_get_venue(); ?></div>
-		<?php //endif; ?>
+		<?php endif; ?>
 		
-		<?php //if ( in_array( 'date', $contentorder ) and Events_Calendar_Shortcode::isValid( $atts['eventdetails'] ) ): ?>
-			<div class="ecs-date">
-				<?php //echo tribe_events_event_schedule_details(); ?>
-			</div>
-		<?php //endif; ?>
-		<?php //if ( in_array( 'excerpt', $contentorder ) and Events_Calendar_Shortcode::isValid( $atts['excerpt'] ) ): ?>
-			<?php $excerptLength = is_numeric( $atts['excerpt'] ) ? $atts['excerpt'] : 100; ?>
-			<div class="ecs-excerpt">
-				<?php //echo Events_Calendar_Shortcode::get_excerpt( $excerptLength ) ?>
-			</div>
-		<?php //endif; ?>
+		
 	</div>
     <?php //if ( in_array( 'button', $contentorder ) and Events_Calendar_Shortcode::isValid( $atts['button'] ) ): ?>
         <div class="ecs-button">

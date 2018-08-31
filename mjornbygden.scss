@@ -21,7 +21,7 @@ ul.ecs-event-list{
       color: $text-color; 
       .day{
         font-weight: bold;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
       }
     }
     .summary{
@@ -37,13 +37,14 @@ ul.ecs-event-list{
         display: block;
       }
       .duration{
-        display: table-cell;
-        width: 49%;
+//        display: table-cell;
+//        width: 49%;
         padding-right: 10px;
       }
       .ecs-venue{
-        display: table-cell;
-        width: 50%;
+//        display: table-cell;
+//        width: 50%;
+        font-style: italic;
       }
     }
   }
